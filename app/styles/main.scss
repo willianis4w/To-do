@@ -1,0 +1,45 @@
+@import "compass_twitter_bootstrap";
+
+body {
+	text-rendering: optimizelegibility;
+}
+
+a:hover {
+	text-decoration: none;
+}
+.actions {
+	width: 60px;
+	text-align: center !important;
+}
+
+.add-block {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #00aba9;
+	color: #fff;
+	margin: 0;
+	h1 {
+		font-size: 40px;
+	}
+	.add {
+		margin-top: 16px;
+	}
+}
+
+.content {
+	padding-top: 100px;
+}
+
+
+
+.table {
+	caption {
+		font-size: 30px;
+		padding: 10px;
+	}
+}
+
+footer {
+	font-size: 18px;
+}

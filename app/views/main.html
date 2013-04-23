@@ -1,0 +1,67 @@
+<div class="row add-block">
+	<div class="container">
+	  	<div class="span5">
+	    	<h1>TO-DO LIST</h1>
+	  	</div>
+	  	<div class="span5 pull-right">
+	    	<form action="#" class="form-horizontal pull-right add" ng-submit="add(todo)">
+	      		<input type="text" name="input" ng-model="todo" placeholder="Adicionar novo" required>
+	      		<button class="btn btn-inverse" type="submit">Add</button>
+	    	</form>
+	  	</div>
+  	</div>
+</div>
+
+<div class="container">
+
+	<div class="row content">
+		<!-- To do -->
+		<div class="hero-unit">
+			<table class="table table-condensed table-bordered table-striped">
+		  		<caption>TO-DO</caption>
+				<thead>
+					<tr>
+						<th><i class="icon-list icon-white"></i></th>
+						<th class="actions"><i class="icon-cog icon-white"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in list | todo:item">
+						<td>{{ item.name }}</td>
+						<td class="actions">
+							<a href="" title="Editar" ng-click="edit( item.name )"><i class="icon-pencil icon-white"></i> </a>
+							<a href="" title="Feito" ng-click="moveDone( item.name )"><i class="icon-chevron-down icon-white"></i> </a>
+							<a href="" title="Remover" ng-click="remove( item.name )"><i class="icon-remove icon-white"></i> </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<hr>
+
+		<!-- Done -->
+		<div class="hero-unit">
+			<table class="table table-condensed table-bordered table-striped">
+		  		<caption>FEITO</caption>
+				<thead>
+					<tr>
+						<th><i class="icon-list icon-white"></i></th>
+						<th class="actions"><i class="icon-cog icon-white"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in list | done:item">
+						<td>{{ item.name }}</td>
+						<td class="actions">
+							<a href="" title="Editar" ng-click="edit( item.name )"><i class="icon-pencil icon-white"></i> </a>
+							<a href="" title="To-do" ng-click="moveTodo( item.name )"><i class="icon-chevron-up icon-white"></i> </a>
+							<a href="" title="Remover" ng-click="remove( item.name )"><i class="icon-remove icon-white"></i> </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
