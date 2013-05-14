@@ -1,14 +1,19 @@
 'use strict';
 
 angular.module('ToDo')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope,$locale,$filter) {
     
     // list
   	$scope.list = [];
   	$scope.todo = '';
 
   	var init = function(data) {
-  		angular.forEach( data , function(item) {
+      angular.forEach( data , function(item) {
+        // verifico se locale está definido
+        if(item.name === 'locale') {
+          $locale.id = item.l;
+        }
+
   		  $scope.list.push( item );
       });
   		
@@ -49,7 +54,7 @@ angular.module('ToDo')
   	$scope.edit = function(name) {
 
   		var item = get(name);
-  		var resp = prompt( 'Rename:' , item.name );
+  		var resp = prompt( $filter('i18n')('rename') , item.name );
   		
   		if( resp !== null ) {
   			item.name = resp;
@@ -65,26 +70,21 @@ angular.module('ToDo')
   	// remove
   	$scope.remove = function(name) {
 
-  		if( confirm('Are you sure?') ) {
+  		if( confirm( $filter('i18n')('confirm') ) ) {
   			var item 	= get(name);
-  			var index 	= $scope.list.indexOf(item);
-			$scope.list.splice(index,1);
+  			var index = $scope.list.indexOf(item);
+
+        // removo da lista
+        $scope.list.splice(index,1);
+
+        // localStorage, remove
+        store.remove(item.name);
   		}
 
-  		// localStorage, remove
-  		store.remove(item.name);
+  		
   	};
 
   	/* Changes */
-
-  	// move to done
-  	$scope.moveDone = function(name) {
-  		var item = get(name);
-  		item.status = 'Done';
-
-  		// localStorage, done
-  		store.set( item.name , item );
-  	};
 
   	// move to todo
   	$scope.moveTodo = function(name) {
@@ -94,6 +94,41 @@ angular.module('ToDo')
   		// localStorage, todo
   		store.set( item.name , item );
   	};
+
+    // move to doing
+    $scope.moveDoing = function(name) {
+      var item = get(name);
+      item.status = 'Doing';
+
+      // localStorage, done
+      store.set( item.name , item );
+    };
+
+    // move to done
+    $scope.moveDone = function(name) {
+      var item = get(name);
+      item.status = 'Done';
+
+      // localStorage, done
+      store.set( item.name , item );
+    };
+
+    /*
+    * i18n
+    */
+
+    $scope.setLocale = function(l) {
+      $locale.id = l;
+      var item = new Object();
+      item.name = 'locale';
+      item.l = l;
+      store.set( 'locale' , item );
+    }
+    
+
+    /*
+    * init
+    */
 
     init( store.getAll() );
 

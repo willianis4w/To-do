@@ -1,12 +1,12 @@
 <div class="row add-block">
 	<div class="container">
 	  	<div class="span5">
-	    	<h1>TO-DO LIST</h1>
+	    	<h1>{{'TO-DO-LIST'|i18n}}</h1>
 	  	</div>
 	  	<div class="span5 pull-right">
 	    	<form action="#" class="form-horizontal pull-right add" ng-submit="add(todo)">
-	      		<input type="text" name="input" ng-model="todo" placeholder="Adicionar novo" required>
-	      		<button class="btn btn-inverse" type="submit">Add</button>
+	      		<input type="text" name="input" ng-model="todo" placeholder="{{'add-new'|i18n}}" required autofocus>
+	      		<button class="btn btn-info" type="submit">OK</button>
 	    	</form>
 	  	</div>
   	</div>
@@ -15,48 +15,80 @@
 <div class="container">
 
 	<div class="row content">
-		<!-- To do -->
+
+		<p>
+			<a title="pt-br" href="#" ng-click="setLocale('pt-br')">
+				<img src="../images/pt-br.jpg" alt="pt-br">
+			</a>
+			<a title="en-us" href="#" ng-click="setLocale('en-us')">
+				<img src="../images/en.jpg" alt="en-us">
+			</a>
+		</p>
+	    
+	    <!-- To-do -->
 		<div class="hero-unit">
 			<table class="table table-condensed table-bordered table-striped">
-		  		<caption>TO-DO</caption>
+		  		<caption>{{'TO-DO'|i18n}}</caption>
 				<thead>
 					<tr>
-						<th><i class="icon-list icon-white"></i></th>
-						<th class="actions"><i class="icon-cog icon-white"></i></th>
+						<th><i class="icon-list"></i></th>
+						<th class="actions"><i class="icon-cog"></i></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in list | todo:item">
 						<td>{{ item.name }}</td>
 						<td class="actions">
-							<a href="" title="Editar" ng-click="edit( item.name )"><i class="icon-pencil icon-white"></i> </a>
-							<a href="" title="Feito" ng-click="moveDone( item.name )"><i class="icon-chevron-down icon-white"></i> </a>
-							<a href="" title="Remover" ng-click="remove( item.name )"><i class="icon-remove icon-white"></i> </a>
+							<a href="" title="{{'t-edit'|i18n}}" ng-click="edit( item.name )"><i class="icon-pencil"></i> </a>
+							<a href="" title="{{'t-doing'|i18n}}" ng-click="moveDoing( item.name )"><i class="icon-chevron-down"></i> </a>
+							<a href="" title="{{'t-remove'|i18n}}" ng-click="remove( item.name )"><i class="icon-remove"></i> </a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
-		<hr>
+		<!-- Doing -->
+		<div class="hero-unit">
+			<table class="table table-condensed table-bordered table-striped">
+		  		<caption>{{'DOING'|i18n}}</caption>
+				<thead>
+					<tr>
+						<th><i class="icon-list"></i></th>
+						<th class="actions"><i class="icon-cog"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in list | doing:item">
+						<td>{{ item.name }}</td>
+						<td class="actions">
+							<a href="" title="{{'t-edit'|i18n}}" ng-click="edit( item.name )"><i class="icon-pencil"></i> </a>
+							<a href="" title="{{'t-to-do'|i18n}}" ng-click="moveTodo( item.name )"><i class="icon-chevron-up"></i> </a>
+							<a href="" title="{{'t-done'|i18n}}" ng-click="moveDone( item.name )"><i class="icon-chevron-down"></i> </a>
+							<a href="" title="{{'t-remove'|i18n}}" ng-click="remove( item.name )"><i class="icon-remove"></i> </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 		<!-- Done -->
 		<div class="hero-unit">
 			<table class="table table-condensed table-bordered table-striped">
-		  		<caption>FEITO</caption>
+		  		<caption>{{'DONE'|i18n}}</caption>
 				<thead>
 					<tr>
-						<th><i class="icon-list icon-white"></i></th>
-						<th class="actions"><i class="icon-cog icon-white"></i></th>
+						<th><i class="icon-list"></i></th>
+						<th class="actions"><i class="icon-cog"></i></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in list | done:item">
 						<td>{{ item.name }}</td>
 						<td class="actions">
-							<a href="" title="Editar" ng-click="edit( item.name )"><i class="icon-pencil icon-white"></i> </a>
-							<a href="" title="To-do" ng-click="moveTodo( item.name )"><i class="icon-chevron-up icon-white"></i> </a>
-							<a href="" title="Remover" ng-click="remove( item.name )"><i class="icon-remove icon-white"></i> </a>
+							<a href="" title="{{'t-edit'|i18n}}" ng-click="edit( item.name )"><i class="icon-pencil"></i> </a>
+							<a href="" title="{{'t-doing'|i18n}}" ng-click="moveDoing( item.name )"><i class="icon-chevron-up"></i> </a>
+							<a href="" title="{{'t-remove'|i18n}}" ng-click="remove( item.name )"><i class="icon-remove"></i> </a>
 						</td>
 					</tr>
 				</tbody>

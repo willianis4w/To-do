@@ -78,9 +78,9 @@ $borderRadiusSmall:     3px !default;
 // Tables
 // -------------------------
 $tableBackground:                   transparent; // overall background-color
-$tableBackgroundAccent:             #333; // for striping
+$tableBackgroundAccent:             #fff; // for striping
 $tableBackgroundHover:              #f5f5f5; // for hover
-$tableBorder:                       #ddd; // table and cell border
+$tableBorder:                       #555; // table and cell border
 
 // Buttons
 // -------------------------
@@ -223,9 +223,9 @@ $paginationActiveBackground:          #f5f5f5 !default;
 
 // Hero unit
 // -------------------------
-$heroUnitBackground:              #2e8bcc !default;
+$heroUnitBackground:              rgb(255, 236, 150) !default;
 $heroUnitHeadingColor:            inherit !default;
-$heroUnitLeadColor:               #fff !default;
+$heroUnitLeadColor:               #000 !default;
 
 
 // Form states and alerts

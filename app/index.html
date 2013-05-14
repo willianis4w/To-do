@@ -21,8 +21,6 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
     
     <div ng-view></div>
 
@@ -30,8 +28,8 @@
       <footer>
         <p class="pull-right">
           Willian Costa Souza @ 2013 |
-          <a href="#">Github</a> |
-          <a href="mailto:willian.93.costa@gmail.com">Feedback</a>
+          <a target="_blank" href="https://github.com/willianis4w/To-do">Github</a> |
+          <a target="_blank" href="mailto:willian.93.costa@gmail.com">Feedback</a>
         </p>
       </footer>
     </div>
@@ -46,18 +44,21 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/locales.js"></script>
     
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/filters/todo.js"></script>
+    <script src="scripts/filters/doing.js"></script>
     <script src="scripts/filters/done.js"></script>
+    <script src="scripts/filters/i18n.js"></script>
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       // var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       // s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
+
   </body>
 </html>

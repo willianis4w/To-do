@@ -8,7 +8,7 @@ a:hover {
 	text-decoration: none;
 }
 .actions {
-	width: 60px;
+	width: 70px;
 	text-align: center !important;
 }
 
@@ -16,11 +16,13 @@ a:hover {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #00aba9;
+	background: rgb(126, 30, 12);
 	color: #fff;
 	margin: 0;
 	h1 {
 		font-size: 40px;
+		margin-left: -40px;
+		font-weight: normal;
 	}
 	.add {
 		margin-top: 16px;
@@ -42,4 +44,8 @@ a:hover {
 
 footer {
 	font-size: 18px;
+}
+
+.modal-about {
+	display: none;
 }
