@@ -1,14 +1,14 @@
 <div class="row add-block">
 	<div class="container">
-	  	<div class="span5">
-	    	<h1>{{'TO-DO-LIST'|i18n}}</h1>
-	  	</div>
-	  	<div class="span5 pull-right">
-	    	<form action="#" class="form-horizontal pull-right add" ng-submit="add(todo)">
-	      		<input type="text" name="input" ng-model="todo" placeholder="{{'add-new'|i18n}}" required autofocus>
-	      		<button class="btn btn-info" type="submit">OK</button>
-	    	</form>
-	  	</div>
+		<div class="span4">
+			<h1>{{'TO-DO-LIST'|i18n}}</h1>
+		</div>
+		<div class="span5">
+			<p>{{'introduction'|i18n}}</p>
+		</div>
+		<div class="span2" style="width: 200px;">
+			<a class="btn btn-info how-to" href="javascript:void(0);" ng-click="how()">{{'how'|i18n}}</a>
+		</div>
   	</div>
 </div>
 
@@ -16,18 +16,19 @@
 
 	<div class="row content">
 
-		<p>
-			<a title="pt-br" href="#" ng-click="setLocale('pt-br')">
-				<img src="../images/pt-br.jpg" alt="pt-br">
-			</a>
-			<a title="en-us" href="#" ng-click="setLocale('en-us')">
-				<img src="../images/en.jpg" alt="en-us">
-			</a>
-		</p>
-	    
+		<div class="span12 first-use hide">
+			<button type="button" class="close" ng-click="close_first_use()">&times;</button>
+			Novo por aqui? Confira o <a href="javascript:void(0);" ng-click="how()">Guia rápido</a>!
+		</div>
+
+		<form action="#" class="form-horizontal add" ng-submit="add(todo)" data-intro="{{'how-2'|i18n}}" data-step='1'>
+      		<input type="text" name="input" ng-model="todo" placeholder="{{'add-new'|i18n}}" class="span11" required autofocus>
+      		<button class="btn btn-success" type="submit">OK</button>
+    	</form>
+		
 	    <!-- To-do -->
 		<div class="hero-unit">
-			<table class="table table-condensed table-bordered table-striped">
+			<table class="table table-condensed table-bordered table-striped" data-intro="{{'how-3'|i18n}}" data-step='2'>
 		  		<caption>{{'TO-DO'|i18n}}</caption>
 				<thead>
 					<tr>
@@ -50,7 +51,7 @@
 
 		<!-- Doing -->
 		<div class="hero-unit">
-			<table class="table table-condensed table-bordered table-striped">
+			<table class="table table-condensed table-bordered table-striped" data-intro="{{'how-4'|i18n}}" data-step='3'>
 		  		<caption>{{'DOING'|i18n}}</caption>
 				<thead>
 					<tr>
@@ -74,7 +75,7 @@
 
 		<!-- Done -->
 		<div class="hero-unit">
-			<table class="table table-condensed table-bordered table-striped">
+			<table class="table table-condensed table-bordered table-striped" data-intro="{{'how-5'|i18n}}" data-step='4'>
 		  		<caption>{{'DONE'|i18n}}</caption>
 				<thead>
 					<tr>
@@ -94,6 +95,25 @@
 				</tbody>
 			</table>
 		</div>
+
+		<div class="container">
+	      <footer>
+	      	<div class="span2 locales" data-intro="{{'how-1'|i18n}}" data-step='6'>
+				<a title="pt-br" href="#" ng-click="setLocale('pt-br')">
+					<img src="../images/pt-br.jpg" alt="pt-br" width="30" height="30">
+				</a>
+				<a title="en-us" href="#" ng-click="setLocale('en-us')">
+					<img src="../images/en.jpg" alt="en-us" width="30" height="30">
+				</a>
+			</div>
+	        <div class="span5 pull-right" data-intro="{{'how-6'|i18n}}" data-step='5'>
+	          	Willian Costa Souza @ 2013 |
+	          	<a target="_blank" href="https://github.com/willianis4w/To-do">Github</a> |
+	          	<a target="_blank" href="mailto:willian.93.costa@gmail.com">Feedback</a>
+	        </div>
+	      </footer>
+	    </div>
+
 	</div>
 
 </div>

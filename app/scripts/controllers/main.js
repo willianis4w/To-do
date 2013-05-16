@@ -8,9 +8,15 @@ angular.module('ToDo')
   	$scope.todo = '';
 
   	var init = function(data) {
+      // primeiro uso
+      if( Object.keys(data).length === 0 ) {
+        $locale.id = 'pt-br';
+        document.querySelector('.first-use').style.display = 'block';
+      }
+
       angular.forEach( data , function(item) {
         // verifico se locale está definido
-        if(item.name === 'locale') {
+        if(item.name == 'locale') {
           $locale.id = item.l;
         }
 
@@ -123,7 +129,23 @@ angular.module('ToDo')
       item.name = 'locale';
       item.l = l;
       store.set( 'locale' , item );
+      introJs().exit();
     }
+
+    /*
+    * How
+    */
+
+    $scope.how = function() {
+      store.set( 'how' , true );
+      introJs().start();
+    };
+
+    $scope.close_first_use = function () {
+      store.set( 'how' , true );
+      document.querySelector('.first-use').style.display = 'none';
+    };
+    
     
 
     /*

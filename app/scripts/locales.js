@@ -1,25 +1,18 @@
 var _locales = {
-    'en-us': {
-        'TO-DO-LIST': 'TO-DO LIST',
-        'TO-DO'     : 'TO-DO',
-        'DOING'     : 'DOING',
-        'DONE'      : 'DONE',
-        'add-new'   : 'Add new',
-        't-edit'    : 'Edit',
-        't-doing'   : 'Doing',
-        't-remove'  : 'Remove',
-        't-to-do'   : 'To-do',
-        't-done'    : 'Done',
-        'rename'    : 'Rename:',
-        'confirm'   : 'Are you sure?'
-    },
-
     'pt-br': {
-        'TO-DO-LIST': 'LISTA DE TAREFAS',
+        'TO-DO-LIST': 'Lista de tarefas',
+        'introduction': 'Anotações fáceis e rápidas para sua organização.',
+        'how'       : 'Guia rápido',
+        'how-1'     : 'Escolha também seu idioma favorito a qualquer momento.',
+        'how-2'     : 'Você pode adicionar novos ítens.',
+        'how-3'     : 'Suas tarefas a fazer.',
+        'how-4'     : 'Suas tarefas sendo feitas.',
+        'how-5'     : 'Suas tarefas concluídas.',
+        'how-6'     : 'Contribua no Github ou dê um feedback.',
         'TO-DO'     : 'PARA FAZER',
         'DOING'     : 'FAZENDO',
         'DONE'      : 'FEITO',
-        'add-new'   : 'Adicionar novo',
+        'add-new'   : 'Adicionar novo ítem',
         't-edit'    : 'Editar',
         't-doing'   : 'Fazendo',
         't-remove'  : 'Remover',
@@ -27,5 +20,27 @@ var _locales = {
         't-done'    : 'Feito',
         'rename'    : 'Renomear:',
         'confirm'   : 'Você tem certeza?'
+    },
+    'en-us': {
+        'TO-DO-LIST': 'To-do list',
+        'introduction': 'Quick and easy notes for your organization.',
+        'how'       : 'Quick start',
+        'how-1'     : 'You also can choose your favorite language anytime.',
+        'how-2'     : 'You can add new items.',
+        'how-3'     : 'Your tasks to do',
+        'how-4'     : 'Your tasks being done.',
+        'how-5'     : 'Your done tasks.',
+        'how-6'     : 'Contribute on Github or give feedback.',
+        'TO-DO'     : 'TO-DO',
+        'DOING'     : 'DOING',
+        'DONE'      : 'DONE',
+        'add-new'   : 'Add new item',
+        't-edit'    : 'Edit',
+        't-doing'   : 'Doing',
+        't-remove'  : 'Remove',
+        't-to-do'   : 'To-do',
+        't-done'    : 'Done',
+        'rename'    : 'Rename:',
+        'confirm'   : 'Are you sure?'
     }
 }

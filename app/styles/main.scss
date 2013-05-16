@@ -1,9 +1,30 @@
 @import "compass_twitter_bootstrap";
+@import "introjs";
+@import "introjs-ie";
 
 body {
 	text-rendering: optimizelegibility;
 }
 
+.first-use {
+	@include box-shadow( rgb(33, 115, 139) 0 0 7px);
+	margin: -20px 10px 20px;
+	padding: 20px 0;
+	background: #4ab0ce;
+	color: #fff;
+	text-align: center;
+	font-size: 26px;
+	a {
+		color: #000;
+		text-decoration: underline;
+	}
+	.close {
+		margin-top: -20px;
+		margin-right: 5px;
+		height: 20px;
+		font-size: 29px;
+	}
+}
 a:hover {
 	text-decoration: none;
 }
@@ -15,17 +36,34 @@ a:hover {
 .add-block {
 	position: fixed;
 	top: 0;
-	width: 100%;
-	background: rgb(126, 30, 12);
-	color: #fff;
 	margin: 0;
+	width: 100%;
+	border-bottom: 1px solid #333;
+	background: #e0e0e0;
+	color: #333;
 	h1 {
-		font-size: 40px;
+		@include text-shadow( #222 0 0 1px);
 		margin-left: -40px;
 		font-weight: normal;
+		font-size: 40px;
 	}
-	.add {
-		margin-top: 16px;
+	p {
+		margin: 23px 0 0 -70px;
+		font-size: 19px;
+	}
+	.how-to {
+		margin: 19px 0 0 104px;
+	}
+}
+
+.add {
+	margin-top: -20px;
+	input, button {
+		padding: 10px;
+		font-size: 18px;
+	}
+	button {
+		width: 88px;
 	}
 }
 
@@ -36,16 +74,18 @@ a:hover {
 
 
 .table {
+	font-size: 15px;
 	caption {
-		font-size: 30px;
 		padding: 10px;
+		font-size: 30px;
+		
 	}
 }
 
 footer {
+	margin-top: -5px;
 	font-size: 18px;
-}
-
-.modal-about {
-	display: none;
+	.locales {
+		margin: -8px;
+	}
 }
