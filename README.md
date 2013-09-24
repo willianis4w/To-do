@@ -6,4 +6,4 @@ To-do list com AngularJS + Local Storage: [Site](http://willian.is4w.com.br/proj
 
 ### Author
 
-[Willian Costa Souza](http://willian.is4w.com.br/) - [Is4w desenvolvimento web](http://is4w.com.br/)
+Willian Costa Souza
